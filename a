@@ -19,24 +19,6 @@ local settingsl = {
 	wht = {},
 }; __index = settingsl;
 
-function b(x)
-	for x, j in pairs (game.Players:GetChildren()) do
-		if string.find(string.lower(x.Name), string.lower(x)) and string.find(string.lower(x.DisplayName) then
-			return x.Name
-		elseif string.find(string.lower(x.DisplayName), string.lower(x)) then
-			return x.Name
-		end
-	end
-end
-
-function addpredict(ch, num)
-	if ch == 'variable' or ch == 'vr' then
-		return tostring(string.split(predict," ")[num]);
-	elseif ch == 'player' or ch == 'plr' then
-		return b(tostring(string.split(predict," ")[num]));
-	end
-end
-
 
 function library:addcommand(c, enable, user, callback, ...)
 	for d, z in pairs(game.Players:GetChildren()) do
