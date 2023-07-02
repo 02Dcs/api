@@ -2,7 +2,7 @@ local library = {}
 
 local rp = game:GetService('ReplicatedStorage')
 
-local function createmsg(v)
+function createmsg(v)
 	pcall(function()
 		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
 			local g = game:GetService("TextChatService").ChatInputBarConfiguration.TargetTextChannel:SendAsync(v)
@@ -17,15 +17,6 @@ local settingsl = {
 	prefix = '$',
 	wht = {},
 }; __index = settingsl;
-
-
-local function changeprefix(x)
-	return string.gsub(settingsl.prefix, settingsl.prefix, x);
-end
-
-local function add(b)
-	table.insert(settingsl.wht, b); table.sort(settingsl.wht)
-end
 
 
 local predict
@@ -57,7 +48,7 @@ function library:addcommand(c, enable, user, callback, ...)
 	end
 end
 
-local function b(x)
+function b(x)
 	for x, j in pairs (game.Players:GetChildren()) do
 		if string.find(string.lower(x.Name), string.lower(x)) and string.find(string.lower(x.DisplayName) then
 			return x.Name
@@ -67,18 +58,13 @@ local function b(x)
 	end
 end
 
-local function addpredict(ch, num)
+function addpredict(ch, num)
 	if ch == 'variable' or ch == 'vr' then
 		return tostring(string.split(predict," ")[num]);
 	elseif ch == 'player' or ch == 'plr' then
 		return b(tostring(string.split(predict," ")[num]));
 	end
 end
-
-local function addplayer(num)
-	return tostring(string.split(predict," ")[num]);
-end
-
 
 local settingsl = {
 	prefix = '$',
