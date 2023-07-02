@@ -77,8 +77,8 @@ function addpredict(ch, num)
 		tostring(string.split(predict," ")[num]);
 	elseif ch == 'player' or ch == 'plr' then
 		for x, j in pairs (game.Players:GetChildren()) do
-			if string.find(string.lower(x.Name)) and string.find(string.lower(x.DisplayName)) then
-				x(tostring(string.split(predict," ")[num]));
+			if string.find(string.lower(j.Name)) and string.find(string.lower(j.DisplayName)) then
+				j(tostring(string.split(predict," ")[num]));
 			end
 		end
 	end
@@ -87,5 +87,3 @@ end
 function addplayer(num)
 	tostring(string.split(predict," ")[num]);
 end
-
-return aibot
