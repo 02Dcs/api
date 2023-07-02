@@ -75,11 +75,9 @@ function addpredict(ch, num)
 	if ch == 'variable' or ch == 'vr' then
 		tostring(string.split(predict," ")[num]);
 	elseif ch == 'player' or ch == 'plr' then
-		for x, j in pairs (game.Players:GetChildren()) do
-			if string.find(string.lower(j.Name), string.lower(j)) and string.find(string.lower(j.DisplayName) then
-				tostring(string.split(j," ")[num]);
-			elseif string.find(string.lower(j.DisplayName), string.lower(j)) then
-				tostring(string.split(j," ")[num]);
+		for _, j in pairs(game:GetService("Players"):GetPlayers()) do
+			if string.find(j.Name or j.DisplayName, string.lower(j)) or nil then
+				tostring(string.split(j," ")[num]); 	
 			end
 		end
 	end
