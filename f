@@ -87,3 +87,7 @@ end
 function addplayer(num)
 	tostring(string.split(predict," ")[num]);
 end
+
+return aibot
+
+--	local xa = tostring(string.split(args," ")[2])
