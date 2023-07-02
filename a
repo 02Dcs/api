@@ -1,0 +1,8 @@
+local settingsl = {
+	prefix = '$',
+	wht = {},
+}; __index = settingsl;
+
+
+print(settingsl.prefix);
+
