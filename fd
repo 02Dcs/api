@@ -1,3 +1,5 @@
+local rp = game:GetService('ReplicatedStorage')
+
 local function createmsg(v)
 	pcall(function()
 		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
