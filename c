@@ -71,15 +71,18 @@ function aibot:addcommand(c, enable, user, callback, ...)
 	end
 end
 
+
+function Predict(name)
+	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+		string.find(v.Name or v.DisplayName, string.lower(name)) or nil
+	end
+end;
+
 function addpredict(ch, num)
 	if ch == 'variable' or ch == 'vr' then
 		tostring(string.split(predict," ")[num]);
 	elseif ch == 'player' or ch == 'plr' then
-		for _, j in pairs(game:GetService("Players"):GetPlayers()) do
-			if string.find(j.Name or j.DisplayName, string.lower(j)) or nil then
-				tostring(string.split(j," ")[num]); 	
-			end
-		end
+		Predict(tostring(string.split(predict," ")[num])); 	
 	end
 end
 
