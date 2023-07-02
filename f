@@ -72,9 +72,11 @@ function aibot:addcommand(c, enable, user, callback, ...)
 end
 
 
-function Predict(name)
+function Predict()
 	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-		string.find(v.Name or v.DisplayName, string.lower(name))
+		if string.find(v.Name or v.DisplayName) then
+			print'...'
+		end
 	end
 end;
 
