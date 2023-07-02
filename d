@@ -10,7 +10,7 @@ function library:createmsg(v)
 		else 
 			rp:FindFirstChild('DefaultChatSystemChatEvents').SayMessageRequest:FireServer(tostring(v), "All");
 		end
-		return library
+		--return library
 	end)
 end
 
