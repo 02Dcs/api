@@ -1,3 +1,5 @@
+local ok = {}
+
 local rp = game:GetService('ReplicatedStorage')
 
 local function createmsg(v)
@@ -10,3 +12,6 @@ local function createmsg(v)
 		end
 	end)
 end
+
+
+return ok
