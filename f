@@ -39,6 +39,16 @@ function library:addcommand(c, enable, user, callback, ...)
 	end
 end
 
+function b(x)
+	for x, j in pairs (game.Players:GetChildren()) do
+		if string.find(string.lower(x.Name), string.lower(x)) and string.find(string.lower(x.DisplayName) then
+			return x.Name
+		elseif string.find(string.lower(x.DisplayName), string.lower(x)) then
+			return x.Name
+		end
+	end
+end
+
 function createmsg(v)
 	pcall(function()
 		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
