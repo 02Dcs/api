@@ -1,8 +1,8 @@
-local ok = {}
+local library = {}
 
 local rp = game:GetService('ReplicatedStorage')
 
-local function createmsg(v)
+local function library:createmsg(v)
 	pcall(function()
 		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
 			local g = game:GetService("TextChatService").ChatInputBarConfiguration.TargetTextChannel:SendAsync(v)
@@ -10,8 +10,9 @@ local function createmsg(v)
 		else 
 			rp:FindFirstChild('DefaultChatSystemChatEvents').SayMessageRequest:FireServer(tostring(v), "All");
 		end
+return library
 	end)
 end
 
 
-return ok
+return library
