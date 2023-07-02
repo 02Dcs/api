@@ -1,18 +1,7 @@
 local library = {}
 
 local rp = game:GetService('ReplicatedStorage')
-local predict
 
-function createmsg(v)
-	pcall(function()
-		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
-			local g = game:GetService("TextChatService").ChatInputBarConfiguration.TargetTextChannel:SendAsync(v)
-			g:SetExtraData("BubbleChatEnabled", false)
-		else 
-			rp:FindFirstChild('DefaultChatSystemChatEvents').SayMessageRequest:FireServer(tostring(v), "All");
-		end
-	end)
-end
 
 local settingsl = {
 	prefix = '$',
@@ -20,6 +9,8 @@ local settingsl = {
 }; __index = settingsl;
 
 
+
+local predict
 function library:addcommand(c, enable, user, callback, ...)
 	for d, z in pairs(game.Players:GetChildren()) do
 		local callback = callback or function() end
@@ -47,5 +38,17 @@ function library:addcommand(c, enable, user, callback, ...)
 		end)
 	end
 end
+
+function createmsg(v)
+	pcall(function()
+		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
+			local g = game:GetService("TextChatService").ChatInputBarConfiguration.TargetTextChannel:SendAsync(v)
+			g:SetExtraData("BubbleChatEnabled", false)
+		else 
+			rp:FindFirstChild('DefaultChatSystemChatEvents').SayMessageRequest:FireServer(tostring(v), "All");
+		end
+	end)
+end
+
 
 return library
