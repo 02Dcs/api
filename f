@@ -71,12 +71,4 @@ function aibot:addcommand(c, enable, user, callback, ...)
 	end
 end
 
-
-
-function addpredict(ch, num)
-	if ch == 'variable' or ch == 'vr' then
-		tostring(string.split(predict," ")[num]);
-	end
-end
-
 return aibot
