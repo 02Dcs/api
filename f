@@ -71,23 +71,16 @@ function aibot:addcommand(c, enable, user, callback, ...)
 	end
 end
 
-function b(x)
-	for x, j in pairs (game.Players:GetChildren()) do
-		if string.find(string.lower(x.Name), string.lower(x)) and string.find(string.lower(x.DisplayName) then
-			return x.Name
-		elseif string.find(string.lower(x.DisplayName), string.lower(x)) then
-			return x.Name
-		end
-	end
-	return aibot
-end
-
 function addpredict(ch, num)
 	if ch == 'variable' or ch == 'vr' then
 		tostring(string.split(predict," ")[num]);
 	elseif ch == 'player' or ch == 'plr' then
 		for x, j in pairs (game.Players:GetChildren()) do
-			b(tostring(string.split(predict," ")[num]));
+			if string.find(string.lower(j.Name), string.lower(j)) and string.find(string.lower(j.DisplayName) then
+				tostring(string.split(j," ")[num]);
+			elseif string.find(string.lower(j.DisplayName), string.lower(j)) then
+				tostring(string.split(j," ")[num]);
+			end
 		end
 	end
 end
@@ -96,3 +89,4 @@ function addplayer(num)
 	tostring(string.split(predict," ")[num]);
 end
 
+return aibot
