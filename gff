@@ -1,0 +1,11 @@
+local settingsl = {
+	prefix = '$',
+	wht = {},
+}; __index = settingsl;
+
+
+function settingsl:changeprefix(x)
+     return string.gsub(settingsl.prefix, settingsl.prefix, x);
+end
+
+
