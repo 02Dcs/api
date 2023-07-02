@@ -1,3 +1,4 @@
+print'test'
 repeat game:IsLoaded() until task.wait(1)
 local rp = game:GetService('ReplicatedStorage')
 
