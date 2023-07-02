@@ -1,10 +1,10 @@
-local settingsl = {
+local Commands = {
 	prefix = '$',
 	wht = {},
-};  settingsl.__index = settingsl;
+}; Commands.__index = Commands;
 
 
-function settingsl:prefix(x)
+function Commands:prefix(x)
      return string.gsub(settingsl.prefix, settingsl.prefix, x);
 end
 
