@@ -1,8 +1,8 @@
-local aibot = {}
+local library = {}
+
 local rp = game:GetService('ReplicatedStorage')
 
-repeat game:IsLoaded() until task.wait(1)
-function aibot:createmsg(v)
+function createmsg(v)
 	pcall(function()
 		if not rp:FindFirstChild('DefaultChatSystemChatEvents') then
 			local g = game:GetService("TextChatService").ChatInputBarConfiguration.TargetTextChannel:SendAsync(v)
@@ -18,16 +18,9 @@ local settingsl = {
 	wht = {},
 }; __index = settingsl;
 
-function aibot:changeprefix(x)
-	return string.gsub(settingsl.prefix, settingsl.prefix, x);
-end
-
-function aibot:add(b)
-	table.insert(settingsl.wht, b); table.sort(settingsl.wht)
-end
 
 local predict
-function aibot:addcommand(c, enable, user, callback, ...)
+function library:addcommand(c, enable, user, callback, ...)
 	for d, z in pairs(game.Players:GetChildren()) do
 		local callback = callback or function() end
 		local args = {...}
@@ -55,26 +48,11 @@ function aibot:addcommand(c, enable, user, callback, ...)
 	end
 end
 
-function aibot:b(x)
-	for x, j in pairs (game.Players:GetChildren()) do
-		if string.find(string.lower(x.Name), string.lower(x)) and string.find(string.lower(x.DisplayName) then
-			return x.Name
-		elseif string.find(string.lower(x.DisplayName), string.lower(x)) then
-			return x.Name
-		end
-	end
-end
+local settingsl = {
+	prefix = '$',
+	wht = {},
+}; __index = settingsl;
 
-function aibot:addpredict(ch, num)
-	if ch == 'variable' or ch == 'vr' then
-		return tostring(string.split(predict," ")[num]);
-	elseif ch == 'player' or ch == 'plr' then
-		return b(tostring(string.split(predict," ")[num]));
-	end
-end
 
-function aibot:addplayer(num)
-	return tostring(string.split(predict," ")[num]);
-end
 
-return aibot
+return library
