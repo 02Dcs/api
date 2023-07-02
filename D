@@ -74,7 +74,7 @@ end
 
 function Predict(name)
 	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-		string.find(v.Name or v.DisplayName, string.lower(name)) or nil
+		string.find(v.Name or v.DisplayName, string.lower(name))
 	end
 end;
 
